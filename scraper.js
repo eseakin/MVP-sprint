@@ -7,21 +7,26 @@ exports.scrape = function (body) {
   var $ = cheerio.load(body)
 
   //div.thing is the parent div
-  //a.thumbnail is the thumbnail
+  //a.thumbnail img src is the thumbnail
   //a.title is the title
+  //a.thumbnail href is link
 
   var results = [];
   $('div.thing').each(function(i, ele) {
     var result = {};
 
-    result.thumb = $(this).children('a.thumbnail').attr('href');
+    result.thumb = $('a.thumbnail > img', this).attr('src');
+    result.link = $('a.thumbnail', this).attr('href');
     result.title = $('a.title', this).text();
 
     results.push(result);
+
   })
 
 
-  console.log('SCRAPER.SCRAPE', results);
+  console.log('SCRAPER.SCRAPE');
+
+  return results;
 }
 
 exports.parse = function(something) {
