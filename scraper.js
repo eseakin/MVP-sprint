@@ -11,8 +11,13 @@ exports.scrape = function (body) {
   //a.title is the title
 
   var results = [];
-  $('a.title').each(function(i, ele) {
-    results.push($(this).text())
+  $('div.thing').each(function(i, ele) {
+    var result = {};
+
+    result.thumb = $(this).children('a.thumbnail').attr('href');
+    result.title = $('a.title', this).text();
+
+    results.push(result);
   })
 
 
