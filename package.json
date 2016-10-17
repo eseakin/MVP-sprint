@@ -1,0 +1,24 @@
+{
+  "name": "mvp-sprint",
+  "version": "1.0.0",
+  "description": "Create a Minimum Viable Product. The goal is to create a page of cute animal pics garnered from Reddit's /aww displayed in a list with the top comments visible. Pics can be moved up and down to create a personal ranking.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eseakin/MVP-sprint.git"
+  },
+  "author": "Eric Eakin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eseakin/MVP-sprint/issues"
+  },
+  "homepage": "https://github.com/eseakin/MVP-sprint#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "express": "^4.14.0",
+    "request": "^2.75.0"
+  }
+}
