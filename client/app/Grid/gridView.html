@@ -9,8 +9,18 @@
     <div class="gridContainer" ng-repeat="obj in results track by $index">
       <a class="gridLink" ng-href='{{ obj.link }}'>
         <h3 class="gridTitle">{{ obj.title }}</h3>
-        <img class="gridImg" src='{{ obj.thumb }}' />
       </a>
+
+      <div class="imgBoxGrid" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" >
+
+        <div ng-show="hoverEdit" class="animate-show hoverSpanGrid">
+          <i ng-click="fav()" class="fa fa-floppy-o saveIconGrid" aria-hidden="true"></i>
+          <i ng-click="next()" class="fa fa-arrow-circle-right nextIconGrid" aria-hidden="true"></i>
+        </div>
+
+        <img class="gridImg" src='{{ obj.thumb }}' />
+      </div>   
+      
     </div>
   </div>
 </div>

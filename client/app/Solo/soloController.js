@@ -26,15 +26,30 @@ angular.module('soloController', ['ngRoute'])
         link: 'https://www.google.com',
         thumb: 'https://b.thumbs.redditmedia.com/jEoCRUGRzP3Y_GjoErnyOcZKcba0ajHpx-A9IXToIKc.jpg',
         title: 'So tired!'
+      },
+      {
+        link: 'https://www.google.com',
+        thumb: 'http://b.thumbs.redditmedia.com/-DlSKbdYluO0QSRHGgJw1JL6a1FC_TgkefUSA2VJr1o.jpg',
+        title: 'Another dog'
+      },
+      {
+        link: 'https://www.google.com',
+        thumb: 'https://b.thumbs.redditmedia.com/UAH2Fthmf7WuWk04CUyovWAkW5WooZDRXRRGMmt8SJQ.jpg',
+        title: 'Bed Time'
+      },
+      {
+        link: 'https://www.google.com',
+        thumb: 'https://b.thumbs.redditmedia.com/jEoCRUGRzP3Y_GjoErnyOcZKcba0ajHpx-A9IXToIKc.jpg',
+        title: 'Giggles'
       }
     ]
 
     $scope.link = 'http://i.imgur.com/ZgQ8ZbK.jpg';
     $scope.thumb = 'http://i.imgur.com/ZgQ8ZbK.jpg'
     $scope.title = 'Moments before attacking my phone'
+    $scope.index = 0;
 
     this.hoverEdit = false;
-    this.imgVis = true;
 
     $scope.hoverIn = function () {
       console.log('hover in');
@@ -49,12 +64,16 @@ angular.module('soloController', ['ngRoute'])
     $scope.fav = function () {
       console.log('fav');
       this.hoverEdit = false;
-      this.imgVis = false;
+      if($scope.results[$scope.index+1]) {
+        $scope.index++
+      }
     }
 
     $scope.next = function () {
       console.log('next');
       this.hoverEdit = false;
-      this.imgVis = false;
+      if($scope.results[$scope.index+1]) {
+        $scope.index++
+      }
     }
   }])

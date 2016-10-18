@@ -27,6 +27,21 @@ angular.module('gridController', ['ngRoute'])
         link: 'https://www.google.com',
         thumb: 'https://b.thumbs.redditmedia.com/jEoCRUGRzP3Y_GjoErnyOcZKcba0ajHpx-A9IXToIKc.jpg',
         title: 'So tired!'
+      },
+      {
+        link: 'https://www.google.com',
+        thumb: 'http://b.thumbs.redditmedia.com/-DlSKbdYluO0QSRHGgJw1JL6a1FC_TgkefUSA2VJr1o.jpg',
+        title: 'Another dog'
+      },
+      {
+        link: 'https://www.google.com',
+        thumb: 'https://b.thumbs.redditmedia.com/UAH2Fthmf7WuWk04CUyovWAkW5WooZDRXRRGMmt8SJQ.jpg',
+        title: 'Bed Time'
+      },
+      {
+        link: 'https://www.google.com',
+        thumb: 'https://b.thumbs.redditmedia.com/jEoCRUGRzP3Y_GjoErnyOcZKcba0ajHpx-A9IXToIKc.jpg',
+        title: 'Giggles'
       }
     ]
 
@@ -34,9 +49,29 @@ angular.module('gridController', ['ngRoute'])
     $scope.thumb = 'http://b.thumbs.redditmedia.com/-DlSKbdYluO0QSRHGgJw1JL6a1FC_TgkefUSA2VJr1o.jpg'
     $scope.title = 'Puppys first time'
 
-    $scope.gridView = function () {
-      console.log('grid click')
-      grid.display();
+    this.hoverEdit = false;
+    $scope.imgVis = true;
+
+    $scope.hoverIn = function () {
+      console.log('hover in');
+      this.hoverEdit = true;
+    }
+
+    $scope.hoverOut = function () {
+      console.log('hover out');
+      this.hoverEdit = false;
+    }
+
+    $scope.fav = function () {
+      console.log('fav');
+      this.hoverEdit = false;
+      $scope.imgVis = false;
+    }
+
+    $scope.next = function () {
+      console.log('next');
+      this.hoverEdit = false;
+      $scope.imgVis = false;
     }
 
   }])

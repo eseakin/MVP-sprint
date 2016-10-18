@@ -1,10 +1,13 @@
 .active{
   border-bottom: 1px solid black;
 }
-.fa-2x, .saveIcon, .nextIcon{
+.fa-2x, .saveIconSolo, .nextIconSolo, .saveIconGrid, .nextIconGrid{
   color:skyblue;
   transition:all .25s;
   text-decoration: none;
+}
+.fa-2x{
+  padding:5px;
 }
 .fa-2x:hover{
   text-shadow: 0px 0px 1px black;
@@ -17,21 +20,20 @@ div, span{
   text-align:center;
 
 }
-.hoverSpan{
+.hoverSpanSolo{
   position:absolute;
   left: 0px;
   top: 0px;
 }
-.saveIcon, .nextIcon{
-  padding:40px;
+.saveIconSolo, .nextIconSolo{
+  margin:40px;
   font-size:8em !important;
 }
-.saveIcon{
-
+.saveIconGrid, .nextIconGrid{
+  margin:10px;
+  font-size:3em !important;
 }
-.nextIcon{
 
-}
 .animate-show {
     -webkit-transition: all linear 0.25s;
     transition: all linear 0.25s;
@@ -40,7 +42,11 @@ div, span{
 .animate-show.ng-hide {
     opacity: 0;
 }
-
+.hoverSpanGrid{
+  position:absolute;
+  left: 40px;
+  top: 0px;
+}
 .gridContainer{
   display:inline-block;
   width:200px;
@@ -58,6 +64,11 @@ div, span{
 .gridImg{
   height:100px;
 }
+.imgBoxGrid{
+
+  width:200px;
+  position: relative;
+}
 
 .soloContainer{
   text-align: center;
@@ -73,7 +84,7 @@ div, span{
 .soloImg{
   width:400px;
 }
-.imgBox{
+.imgBoxSolo{
 
   width:400px;
   position: relative;

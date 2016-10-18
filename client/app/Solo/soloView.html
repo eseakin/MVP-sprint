@@ -7,18 +7,18 @@
   <div class="container">
     <h1 class="viewTitle">Solo View</h1>
     <div class="soloContainer">
-      <a class="soloLink" ng-href='{{ link }}'>
-        <h3 class="soloTitle">{{ title }}</h3>
+      <a class="soloLink" ng-href='{{ results[index].link }}'>
+        <h3 class="soloTitle">{{ results[index].title }}</h3>
       </a>
 
-      <div class="imgBox" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" >
+      <div class="imgBoxSolo" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" >
 
-        <div ng-show="hoverEdit" class="animate-show hoverSpan">
-          <i ng-click="fav()" class="fa fa-floppy-o saveIcon" aria-hidden="true"></i>
-          <i ng-click="next()" class="fa fa-arrow-circle-right nextIcon" aria-hidden="true"></i>
+        <div ng-show="hoverEdit" class="animate-show hoverSpanSolo">
+          <i ng-click="fav()" class="fa fa-floppy-o saveIconSolo" aria-hidden="true"></i>
+          <i ng-click="next()" class="fa fa-arrow-circle-right nextIconSolo" aria-hidden="true"></i>
         </div>
 
-        <img class="soloImg" src='{{ thumb }}' />
+        <img class="soloImg" src='{{ results[index].thumb }}' />
       </div>
       
     </div>
