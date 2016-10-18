@@ -1,4 +1,4 @@
-angular.module('gridController', ['ngRoute'])
+angular.module('gridController', ['ngRoute', 'httpMod'])
   .factory('grid', function() {
 
     var display = function() {
@@ -11,46 +11,23 @@ angular.module('gridController', ['ngRoute'])
       display: display
     }
   })
-  .controller('gridController', ['$scope', 'grid', function ($scope, grid) {
-    $scope.results = [
-      {
-        link: 'https://www.google.com',
-        thumb: 'http://b.thumbs.redditmedia.com/-DlSKbdYluO0QSRHGgJw1JL6a1FC_TgkefUSA2VJr1o.jpg',
-        title: 'Puppys first time'
-      },
-      {
-        link: 'https://www.google.com',
-        thumb: 'https://b.thumbs.redditmedia.com/UAH2Fthmf7WuWk04CUyovWAkW5WooZDRXRRGMmt8SJQ.jpg',
-        title: 'Future sheep dog'
-      },
-      {
-        link: 'https://www.google.com',
-        thumb: 'https://b.thumbs.redditmedia.com/jEoCRUGRzP3Y_GjoErnyOcZKcba0ajHpx-A9IXToIKc.jpg',
-        title: 'So tired!'
-      },
-      {
-        link: 'https://www.google.com',
-        thumb: 'http://b.thumbs.redditmedia.com/-DlSKbdYluO0QSRHGgJw1JL6a1FC_TgkefUSA2VJr1o.jpg',
-        title: 'Another dog'
-      },
-      {
-        link: 'https://www.google.com',
-        thumb: 'https://b.thumbs.redditmedia.com/UAH2Fthmf7WuWk04CUyovWAkW5WooZDRXRRGMmt8SJQ.jpg',
-        title: 'Bed Time'
-      },
-      {
-        link: 'https://www.google.com',
-        thumb: 'https://b.thumbs.redditmedia.com/jEoCRUGRzP3Y_GjoErnyOcZKcba0ajHpx-A9IXToIKc.jpg',
-        title: 'Giggles'
-      }
-    ]
-
-    $scope.link = 'https://www.google.com';
-    $scope.thumb = 'http://b.thumbs.redditmedia.com/-DlSKbdYluO0QSRHGgJw1JL6a1FC_TgkefUSA2VJr1o.jpg'
-    $scope.title = 'Puppys first time'
+  .controller('gridController', ['$scope', 'grid', 'httpFact', function ($scope, grid, httpFact) {
+    $scope.results = [];
 
     this.hoverEdit = false;
     $scope.imgVis = true;
+
+    $scope.saveData = function(data) {
+      console.log('saveData', data);
+      $scope.results = data;
+    }
+
+    $scope.init = function() {
+      httpFact.getData($scope.saveData);
+      console.log('Grid Ctrl results');
+    }
+
+    $scope.init();
 
     $scope.hoverIn = function () {
       console.log('hover in');

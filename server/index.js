@@ -2,14 +2,16 @@ var express = require('express');
 var request = require('request');
 var scraper = require('./scraper');
 var app = express();
+app.use(express.static('client'));
 
 app.get('/scrape', function(req, res) {
   request('https://www.reddit.com/r/aww', function (error, response, body) {
+    console.log('reddit data requested')
     if (!error && response.statusCode == 200) {
 
       var results = scraper.scrape(body)
-
-      results = parse(results);
+console.log('reddit request results', results)
+      // results = parse(results);
 
       res.send(results)
     } else if (error) {
@@ -19,7 +21,7 @@ app.get('/scrape', function(req, res) {
 });
 
 app.get('/', function(req, res) {
-  res.send('success')
+  res.send('index.html')
 })
 
 

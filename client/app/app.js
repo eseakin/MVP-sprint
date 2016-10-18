@@ -1,4 +1,4 @@
-var app = angular.module('app', ['ngRoute', 'ngAnimate', 'gridController', 'soloController', 'favCtrl'])
+var app = angular.module('app', ['ngRoute', 'gridController', 'soloController', 'favCtrl'])
 
 
   .config(function($routeProvider) {
