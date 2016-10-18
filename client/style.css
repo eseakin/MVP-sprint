@@ -1,8 +1,57 @@
+div, span{
+  /*border:1px solid red;*/
+}
+/*
+font-family: 'Covered By Your Grace', cursive;
+font-family: 'Indie Flower', cursive;
+font-family: 'Permanent Marker', cursive;
+*/
+body{
+  text-align: center;
+}
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  color:#ffa3e8;
+  font-size:40px;
+}
+h2 {
+
+}
+h3 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 22px;
+}
+h4 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 16px;
+}
+h5 {
+  margin-top:-32px;
+  margin-right:10px;
+font-family: 'Indie Flower', cursive;
+  font-size:20px;
+  font-weight: 300;
+  color: #cc63a2;
+}
+a {
+  text-decoration: none;
+  transition: all .25s;
+}
+a:hover {
+  text-decoration: underline;
+}
+img {
+  box-shadow: 4px 4px 8px #b6c4c6
+}
+.nav {
+  margin-bottom: 20px
+}
+
 .active{
-  border-bottom: 1px solid black;
+  border-bottom: 2px solid #ffa3e8;
 }
 .fa-2x, .saveIconSolo, .nextIconSolo, .saveIconGrid, .nextIconGrid{
-  color:skyblue;
+  color:#8cebff;
   transition:all .25s;
   text-decoration: none;
 }
@@ -10,28 +59,51 @@
   padding:5px;
 }
 .fa-2x:hover{
-  text-shadow: 0px 0px 1px black;
-  border-bottom: 1px solid black;
-}
-div, span{
-/*  border:1px solid red;*/
+  text-shadow: 0px 0px 1px #cc63a2;
+  border-bottom: 2px solid #cc63a2;
+  color: #ffa3e8;
 }
 .container{
   text-align:center;
 
 }
+/*=========SOLO ICONS============*/
 .hoverSpanSolo{
+  width: 400px;
   position:absolute;
   left: 0px;
   top: 0px;
 }
 .saveIconSolo, .nextIconSolo{
-  margin:40px;
-  font-size:8em !important;
+  position:absolute;
+  font-size:4em !important;
+}
+.saveIconSolo{
+  left: 20px;
+}
+.nextIconSolo{
+  right:20px;
+}
+.saveIconSolo:hover, .nextIconSolo:hover, .saveIconGrid:hover, .nextIconGrid:hover{
+  color: #ffa3e8;
+}
+
+/*=========GRID ICONS============*/
+.hoverSpanGrid{
+  position:absolute;
+  width:300px;
+  left: 0px;
+  top: 0px;
 }
 .saveIconGrid, .nextIconGrid{
   margin:10px;
   font-size:3em !important;
+}
+.saveIconGrid{
+  left: 20px;
+}
+.nextIconGrid{
+  right:20px;
 }
 
 .animate-show {
@@ -42,34 +114,34 @@ div, span{
 .animate-show.ng-hide {
     opacity: 0;
 }
-.hoverSpanGrid{
-  position:absolute;
-  left: 40px;
-  top: 0px;
-}
+
+
+/*=========GRID============*/
+
 .gridContainer{
   display:inline-block;
-  width:200px;
+  width:300px;
   height:auto;
   margin:10px;
   text-align:center;
 }
-
 .gridTitle{
-
 }
 .gridLink{
   text-decoration: none;
 }
 .gridImg{
-  height:100px;
+  max-height:200px;
+  height:200px;
+  max-width: 300px;
 }
 .imgBoxGrid{
-
-  width:200px;
+  height:auto;
+  width:300px;
   position: relative;
 }
 
+/*=========SOLO============*/
 .soloContainer{
   text-align: center;
   width:400px;
@@ -85,7 +157,6 @@ div, span{
   width:400px;
 }
 .imgBoxSolo{
-
   width:400px;
   position: relative;
 }

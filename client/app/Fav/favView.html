@@ -1,14 +1,28 @@
 
 <div id='container' ng-controller="favCtrl">
-  <a href="#/soloView"><i class="fa fa-square fa-2x" aria-hidden="true"></i></a>
-  <a href="#/gridView"><i class="fa fa-th-large fa-2x" aria-hidden="true"></i></a>
-  <a href="#/favorites"><i class="fa fa-heart fa-2x active" aria-hidden="true"></i></a>
+  <div class="nav">
+    <a href="#/soloView"><i class="fa fa-square fa-2x" aria-hidden="true"></i></a>
+    <a href="#/gridView"><i class="fa fa-th-large fa-2x" aria-hidden="true"></i></a>
+    <a href="#/favorites"><i class="fa fa-heart fa-2x active" aria-hidden="true"></i></a>
+  </div>
+  <div class="container">
+  <h2 class="viewTitle">Favorites</h2>
+    <div class="gridContainer" ng-repeat="obj in favorites track by $index">
 
-  <h1>fav View</h1>
-  <div>
-    <a ng-href='{{ link }}'>
-      <h3>{{ title }}</h3>
-      <img src='{{ thumb }}' />
-    </a>
+      <div class="imgBoxGrid" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" >
+
+        <div ng-show="hoverEdit" class="animate-show hoverSpanGrid">
+          <i ng-click="httpFact.fav()" class="fa fa-heart saveIconGrid" aria-hidden="true"></i>
+          <i ng-click="next()" class="fa fa-arrow-circle-right nextIconGrid" aria-hidden="true"></i>
+        </div>
+
+        <img class="gridImg" src='{{ obj.thumb }}' />
+      </div>   
+      
+      <a class="gridLink" ng-href='{{ obj.link }}'>
+        <h3 class="gridTitle">{{ obj.title }}</h3>
+        <!-- <p>{{ obj.link }}</p> -->
+      </a>
+    </div>
   </div>
 </div>

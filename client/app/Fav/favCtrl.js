@@ -1,24 +1,30 @@
-angular.module('favCtrl', ['ngRoute'])
-  .factory('fav', function() {
+angular.module('favCtrl', ['ngRoute', 'httpMod'])
+  .controller('favCtrl', ['$scope', 'httpFact', function ($scope, httpFact) {
+    $scope.favorites = [];
 
-    var display = function() {
-      console.log('fav display')
+    $scope.init = function () {
+      $scope.favorites = httpFact.favorites;
+    }
+    $scope.init();
 
-      return 5;
+    $scope.hoverIn = function () {
+      // console.log('hover in');
+      this.hoverEdit = true;
     }
 
-    return {
-      display: display
+    $scope.hoverOut = function () {
+      // console.log('hover out');
+      this.hoverEdit = false;
     }
-  })
-  .controller('favCtrl', ['$scope', 'fav', function ($scope, fav) {
-    $scope.link = 'https://www.google.com';
-    $scope.thumb = 'http://b.thumbs.redditmedia.com/-DlSKbdYluO0QSRHGgJw1JL6a1FC_TgkefUSA2VJr1o.jpg'
-    $scope.title = 'Favorites'
 
-    $scope.favView = function () {
-      console.log('fav click')
-      fav.display();
+//SHOULD UNFAV WHEN CLICKED AND REMOVE
+    $scope.fav = function() {
+      console.log('fav');
+      this.hoverEdit = false;
+      httpFact.fav($scope.results[$scope.index]);
+      if($scope.results[$scope.index+1]) {
+        $scope.index++
+      }
     }
 
   }])
