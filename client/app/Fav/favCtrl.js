@@ -3,7 +3,11 @@ angular.module('favCtrl', ['ngRoute', 'httpMod'])
     $scope.favorites = [];
 
     $scope.init = function () {
-      $scope.favorites = httpFact.favorites;
+      if (!httpFact.favorites.length) {
+        $scope.favorites = [{title: 'No favorites yet!', thumb: '../../img/empty-heart.jpg'}]
+      } else {
+        $scope.favorites = httpFact.favorites;      
+      }
     }
     $scope.init();
 
@@ -18,13 +22,9 @@ angular.module('favCtrl', ['ngRoute', 'httpMod'])
     }
 
 //SHOULD UNFAV WHEN CLICKED AND REMOVE
-    $scope.fav = function() {
+    $scope.fav = function(index) {
       console.log('fav');
-      this.hoverEdit = false;
-      httpFact.fav($scope.results[$scope.index]);
-      if($scope.results[$scope.index+1]) {
-        $scope.index++
-      }
+      $scope.favorites.splice(index, 1);
     }
 
   }])

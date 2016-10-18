@@ -16,6 +16,6 @@ var app = angular.module('app', ['ngRoute', 'gridController', 'soloController', 
         controller: 'favCtrl'
       })
       .otherwise({
-        redirectTo: '/soloView'
+        redirectTo: '/favorites'
       });
   })

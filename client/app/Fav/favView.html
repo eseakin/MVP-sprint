@@ -6,21 +6,20 @@
     <a href="#/favorites"><i class="fa fa-heart fa-2x active" aria-hidden="true"></i></a>
   </div>
   <div class="container">
-  <h2 class="viewTitle">Favorites</h2>
+  <!-- <h2 class="viewTitle">Favorites</h2> -->
     <div class="gridContainer" ng-repeat="obj in favorites track by $index">
 
-      <div class="imgBoxGrid" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()" >
+      <div class="imgBoxGrid" ng-mouseover="hoverIn()" ng-mouseleave="hoverOut()">
 
         <div ng-show="hoverEdit" class="animate-show hoverSpanGrid">
-          <i ng-click="httpFact.fav()" class="fa fa-heart saveIconGrid" aria-hidden="true"></i>
-          <i ng-click="next()" class="fa fa-arrow-circle-right nextIconGrid" aria-hidden="true"></i>
+          <i ng-click="fav($index)" class="fa fa-ban saveIconGrid" aria-hidden="true"></i>
         </div>
 
         <img class="gridImg" src='{{ obj.thumb }}' />
       </div>   
       
       <a class="gridLink" ng-href='{{ obj.link }}'>
-        <h3 class="gridTitle">{{ obj.title }}</h3>
+        <h4 class="gridTitle">{{ obj.title }}</h4>
         <!-- <p>{{ obj.link }}</p> -->
       </a>
     </div>

@@ -15,7 +15,7 @@ h1 {
   font-size:40px;
 }
 h2 {
-
+font-family: 'Covered By Your Grace', cursive;
 }
 h3 {
   font-family: 'Indie Flower', cursive;
@@ -43,6 +43,32 @@ a:hover {
 img {
   box-shadow: 4px 4px 8px #b6c4c6
 }
+.login{
+  position:absolute;
+  right:20px;
+  top:50px;
+  text-align:right;
+}
+input{
+  border-radius:5px;
+  padding:2px;
+  margin:2px;
+}
+.input{
+  padding: 5px;
+  font-family:arial;
+  font-size:12px;
+  color: #cc63a2;
+}
+.submit{
+  background-color:#cc63a2;
+  border-radius: 5px;
+  padding:3px;
+  color:white;
+  /*box-shadow: 1px 1px 1px 1px blue;*/
+  border:none;
+}
+
 .nav {
   margin-bottom: 20px
 }
