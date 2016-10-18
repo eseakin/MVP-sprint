@@ -32,7 +32,7 @@ var parse = function (list) {
   var results = "";
 
   list.forEach(function(ele, i) {
-    var html = "<div><a style='display:block' href="+ele.link+">"+ele.title+"</a><img style='width:200px; height:auto;display:block' src="+ele.thumb+" /></div>";
+    var html = "<div style='width:300px;display:inline-block;text-align:center;margin:10px'><a style='margin-bottom:5px;display:block;' href="+ele.link+">"+ele.title+"</a><img style='width:200px;height:auto;display:block;text-align:center;margin:auto' src="+ele.thumb+" /></div>";
 
     results += html;
   });

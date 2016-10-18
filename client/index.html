@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>MVP Cuteness</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" href="lib/fontawesome/css/font-awesome.min.css">
+  </head>
+  <body ng-app='app'>
+    <h1>MVP Cuteness</h1>
+
+    <!-- the ng-view directive is where our templates will be loaded into when naviagted to -->
+<!--     <nav>
+      <a href="#/soloView">Solo View</a>
+      <a href="#/gridView">Grid View</a>
+    </nav> -->
+
+    <div ng-view></div>
+
+    <script type="text/javascript" src="../node_modules/angular/angular.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="../node_modules/angular-animate/angular-animate.js"></script>
+
+    <script type="text/javascript" src="app/Grid/gridController.js"></script>
+    <script type="text/javascript" src="app/Solo/soloController.js"></script>
+    <script type="text/javascript" src="app/Fav/favCtrl.js"></script>
+<!--     <script src="app/shorten/shorten.js"></script>
+    <script src="app/services/services.js"></script> -->
+    <script type="text/javascript" src="app/app.js"></script>
+  </body>
+</html>

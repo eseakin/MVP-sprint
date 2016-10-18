@@ -1,0 +1,80 @@
+.active{
+  border-bottom: 1px solid black;
+}
+.fa-2x, .saveIcon, .nextIcon{
+  color:skyblue;
+  transition:all .25s;
+  text-decoration: none;
+}
+.fa-2x:hover{
+  text-shadow: 0px 0px 1px black;
+  border-bottom: 1px solid black;
+}
+div, span{
+/*  border:1px solid red;*/
+}
+.container{
+  text-align:center;
+
+}
+.hoverSpan{
+  position:absolute;
+  left: 0px;
+  top: 0px;
+}
+.saveIcon, .nextIcon{
+  padding:40px;
+  font-size:8em !important;
+}
+.saveIcon{
+
+}
+.nextIcon{
+
+}
+.animate-show {
+    -webkit-transition: all linear 0.25s;
+    transition: all linear 0.25s;
+    opacity: 1;
+}
+.animate-show.ng-hide {
+    opacity: 0;
+}
+
+.gridContainer{
+  display:inline-block;
+  width:200px;
+  height:auto;
+  margin:10px;
+  text-align:center;
+}
+
+.gridTitle{
+
+}
+.gridLink{
+  text-decoration: none;
+}
+.gridImg{
+  height:100px;
+}
+
+.soloContainer{
+  text-align: center;
+  width:400px;
+  margin:auto;
+
+}
+.soloTitle{
+  text-align:center;
+}
+.soloLink{
+}
+.soloImg{
+  width:400px;
+}
+.imgBox{
+
+  width:400px;
+  position: relative;
+}

@@ -2,7 +2,7 @@
   "name": "mvp-sprint",
   "version": "1.0.0",
   "description": "Create a Minimum Viable Product. The goal is to create a page of cute animal pics garnered from Reddit's /aww displayed in a list with the top comments visible. Pics can be moved up and down to create a personal ranking.",
-  "main": "index.js",
+  "main": "./server/index.js",
   "scripts": {
     "test": "npm test"
   },
@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/eseakin/MVP-sprint#readme",
   "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-route": "^1.5.8",
     "cheerio": "^0.22.0",
     "express": "^4.14.0",
     "request": "^2.75.0"
