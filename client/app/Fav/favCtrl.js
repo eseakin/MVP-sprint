@@ -25,6 +25,9 @@ angular.module('favCtrl', ['ngRoute', 'httpMod'])
     $scope.fav = function(index) {
       console.log('fav');
       $scope.favorites.splice(index, 1);
+      if (!$scope.favorites.length) {
+        $scope.init();
+      }
     }
 
   }])
